@@ -196,7 +196,7 @@ Later, you'll learn about:
 
 ---
 
-<h1># 📘 Java Variables: The Ultimate Guide </h1>
+<h1># 📘 Java Variables</h1>
 
 ---
 
