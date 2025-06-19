@@ -665,4 +665,231 @@ var message = "Hi"; // inferred as String
 ---
 
 
+<br>
+
+
+📘 Java Literals 
+Including memory usage, internal workings, and best practices
+
+📖 Table of Contents
+What Are Literals?
+
+Types of Java Literals
+
+Integer Literals
+
+Floating-point Literals
+
+Character Literals
+
+String Literals
+
+Boolean Literals
+
+Null Literal
+
+How Java Stores Literals (Memory Use)
+
+Behind the Scenes (JVM Behavior)
+
+Escape Sequences in Literals
+
+Common Errors and Pitfalls
+
+Cheat Sheet + Practice Questions
+
+🧩 1. What Are Java Literals?
+A literal is a fixed value assigned to a variable. It's the actual data in the code.
+
+java
+Copy
+Edit
+int age = 25;        // 25 is a literal
+boolean isOpen = true; // true is a literal
+✅ You use literals whenever you write a value directly in your code.
+
+🧪 2. Types of Java Literals
+1️⃣ Integer Literals
+Used for whole numbers.
+
+java
+Copy
+Edit
+int x = 10;
+long y = 100000L;  // 'L' indicates long
+Allowed Bases:
+Decimal (base 10): 123
+
+Octal (base 8): 0123 → starts with 0
+
+Hexadecimal (base 16): 0x7B
+
+Binary (base 2): 0b1010
+
+📦 Memory Use:
+
+byte → 1 byte
+
+short → 2 bytes
+
+int → 4 bytes
+
+long → 8 bytes
+
+2️⃣ Floating-Point Literals
+Used for numbers with decimals.
+
+java
+Copy
+Edit
+float pi = 3.14f;     // 'f' or 'F' must be used for float
+double gravity = 9.8; // double is default
+📦 Memory Use:
+
+float → 4 bytes (32-bit IEEE 754)
+
+double → 8 bytes (64-bit IEEE 754)
+
+🧠 How It Works Internally:
+
+Uses IEEE 754 standard
+
+Stores number in sign + exponent + mantissa format
+
+3️⃣ Character Literals
+Used for single characters.
+
+java
+Copy
+Edit
+char letter = 'A';
+char unicodeChar = '\u0041';  // Unicode representation
+📦 Memory Use:
+
+char uses 2 bytes, stores Unicode value (0–65535)
+
+✅ Character literal must be enclosed in single quotes 'A'
+
+4️⃣ String Literals
+Used for sequences of characters.
+
+java
+Copy
+Edit
+String name = "Nilasi";
+Stored in String Pool (in the heap memory)
+
+Strings are immutable — can’t be changed after creation
+
+📦 Memory Use:
+
+Depends on the length and characters (each char = 2 bytes)
+
+5️⃣ Boolean Literals
+java
+Copy
+Edit
+boolean isTrue = true;
+boolean isFalse = false;
+Only two values: true, false
+
+Stored as 1 byte in most JVMs
+
+6️⃣ Null Literal
+Used to denote no object.
+
+java
+Copy
+Edit
+String name = null;
+null is not the same as empty ("")
+
+Indicates that the reference doesn’t point to any object
+
+🧠 3. How Java Stores Literals (Memory)
+Literal Type	Stored In	Memory Use
+int, float	Stack	Fixed size
+char, boolean	Stack	Fixed size
+String	Heap (String Pool)	Variable size
+null	Stack reference	No object
+
+⚙️ 4. Behind the Scenes (BTS) – How JVM Handles Literals
+🔍 When you write:
+java
+Copy
+Edit
+int x = 5;
+📦 JVM does:
+
+Allocates 4 bytes in stack memory
+
+Stores value 5 in binary (0000 0101)
+
+🔍 When you write:
+java
+Copy
+Edit
+String s1 = "hello";
+String s2 = "hello";
+📦 JVM:
+
+Puts "hello" in String pool
+
+Both s1 and s2 point to the same memory (to save space)
+
+🧠 JVM optimizes literals for performance and memory
+
+🧵 5. Escape Sequences in Literals
+Used in char or String literals for special characters:
+
+Sequence	Meaning
+\n	New line
+\t	Tab
+\\	Backslash
+\"	Double quote
+\'	Single quote
+
+java
+Copy
+Edit
+System.out.println("Name:\tNilasi\nStatus:\tStudent");
+⚠️ 6. Common Errors with Literals
+Error	Reason
+char c = "A";	Wrong quotes. Use single: 'A'
+float x = 3.14;	Must use f like: 3.14f
+int x = 123456789012345;	Too large. Use long and add L
+String s = null; s.length()	NullPointerException
+
+📌 7. Java Literal Cheat Sheet
+Type	Literal Example	Notes
+int	100, 0x7F, 0b1101	Default for integers
+long	100000L	Use L at end
+float	3.14f	Must use f
+double	3.14, 1.0e10	Default for decimal values
+char	'A', '\n'	Single character or escape
+String	"Java"	Stored in heap/String pool
+boolean	true, false	Only two options
+null	null	For reference types only
+
+🧪 Practice Section
+✅ Task 1: Identify literal types
+java
+Copy
+Edit
+int a = 10;
+char c = 'B';
+String name = "Java";
+float f = 3.5f;
+boolean b = true;
+✅ Task 2: Declare one variable of each type with a literal value.
+🏁 Conclusion
+Literals in Java are the foundation of working with variables and memory.
+By mastering them, you understand:
+
+How memory is allocated
+
+How data is represented behind the scenes
+
+How to write bug-free, efficient code
+
 
